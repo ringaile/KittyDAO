@@ -2,11 +2,16 @@ import { useEffect, useMemo, useState } from "react";
 
 import { useWeb3 } from "@3rdweb/hooks";
 import { ThirdwebSDK } from "@3rdweb/sdk";
+import { ethers } from "ethers";
 
 const sdk = new ThirdwebSDK("rinkeby");
 
 const bundleDropModule = sdk.getBundleDropModule(
   "0x5818694fB184dFF3345292D3eE98d3A1FfE8584b",
+);
+
+const tokenModule = sdk.getTokenModule(
+  "0xb2AfE099b3a90E33301f05D1C5bD4fAC7bcF1226"
 );
 
 const App = () => {
